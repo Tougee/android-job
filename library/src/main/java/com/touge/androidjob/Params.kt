@@ -5,7 +5,7 @@ import java.io.Serializable
 class Params(
     val priority: Int,
     val retryCount: Int,
-    val requireNetworkType: RequireType,
+    val requireType: RequireType,
     val groupId: String?
 ): Serializable {
 

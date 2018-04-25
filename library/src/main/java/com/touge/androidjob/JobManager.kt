@@ -2,15 +2,14 @@ package com.touge.androidjob
 
 import java.util.concurrent.Executors
 
-class JobManager(config: Config) {
+class JobManager(private val config: Config) {
 
     private val executor = Executors.newFixedThreadPool(2)
+    private val addJobQueue = AddJobQueue()
 
-    companion object {
-        class AddRunnable(val job: Job): Runnable {
-            override fun run() {
-
-            }
-        }
+    fun addJob(job: Job) {
+        addJobQueue.offer(job)
     }
+
+
 }
